@@ -1,0 +1,804 @@
+{
+    "name":  "Microsoft Cloud Web Applications Threat Matrix",
+    "versions":  {
+                     "attack":  "19",
+                     "layer":  "4.5",
+                     "navigator":  "5.3.2"
+                 },
+    "domain":  "enterprise-attack",
+    "description":  "Microsoft cloud web application matrix mapped to Enterprise ATT\u0026CK 19.2. Scores indicate presence, not severity. See layer metadata for every original tactic and custom entry. Annotations preserve source names and analytical confidence; official tactic positions may differ.",
+    "sorting":  0,
+    "layout":  {
+                   "expandedSubtechniques":  "annotated",
+                   "layout":  "side",
+                   "showID":  true,
+                   "showName":  true
+               },
+    "hideDisabled":  false,
+    "techniques":  [
+                       {
+                           "techniqueID":  "T1584.001",
+                           "tactic":  "resource-development",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Resource Development\nOriginal threat matrix technique name: Subdomain takeover\nSource ID: MS-TA7001\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Resource Development | Subdomain takeover | MS-TA7001",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1584/001",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Subdomain%20takeover/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1190",
+                           "tactic":  "initial-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Application vulnerability\nSource ID: MS-TA7002\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.\n\nOriginal threat matrix tactic: Execution\nOriginal threat matrix technique name: Application exploit (RCE)\nSource ID: MS-TA7009\nMapping confidence: Medium\nBasis: Researcher mapping; conditional public-facing scope\nSelect T1190 for exploitation of an internet-facing cloud web application to gain initial access through remote code execution. The web service can also be private; that private-service scenario is not covered by T1190 merely because RCE occurs. T1210 may apply when an internal remote service is exploited for lateral movement after an initial foothold, but that context is not established here. T1203 concerns client applications, not generic server-side RCE. Medium confidence reflects the source\u0027s unspecified exposure and access context. Preserve Microsoft\u0027s original Execution tactic in comments; Navigator places T1190 under Initial Access.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Initial Access | Application vulnerability | MS-TA7002",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Execution | Application exploit (RCE) | MS-TA7009",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1190",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Application%20exploit%20(RCE)/",
+                                             "label":  "Microsoft technique"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Application%20vulnerability/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1195.002",
+                           "tactic":  "initial-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Code injection in connected repository\nSource ID: MS-TA7003\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.\n\nOriginal threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Compromised image in registry\nSource ID: MS-TA7004\nMapping confidence: High\nBasis: Microsoft explicit mapping\nMicrosoft lists T1195.002 and T1525. Select T1195.002 for malicious images entering the application\u0027s deployment supply chain, consistent with its Initial Access placement and public/private registry scope. T1525 is the more specific alternative for implanting an internal image for persistence, not every described registry scenario.\n\nOriginal threat matrix tactic: Persistence\nOriginal threat matrix technique name: Source code modification\nSource ID: MS-TA7014\nMapping confidence: Medium\nBasis: Researcher mapping\nModifying canonical source or deployment artifacts before automated production consumption matches Compromise Software Supply Chain, consistent with Microsoft\u0027s connected-repository mapping. T1525 is a specific alternative for the internal container-image variant. The selection captures the common deployment mechanism, not every possible runtime edit. Microsoft\u0027s Persistence placement describes repeated redeployment; ATT\u0026CK assigns the selected technique to Initial Access.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Initial Access | Code injection in connected repository | MS-TA7003",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Initial Access | Compromised image in registry | MS-TA7004",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Persistence | Source code modification | MS-TA7014",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1195/002",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Code%20injection%20in%20connected%20repository/",
+                                             "label":  "Microsoft technique"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Compromised%20image%20in%20registry/",
+                                             "label":  "Microsoft technique"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Source%20code%20modification/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1133",
+                           "tactic":  "initial-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Exposed/misconfigured admin interfaces\nSource ID: MS-TA7005\nMapping confidence: Medium\nBasis: Researcher mapping; conditional external-access scope\nMaps to T1133 where an externally reachable administrative interface is used to gain access to the application environment, including authenticated management access or exposed services without authentication. Mere exposure is not itself adversary behavior. Private-only interfaces and misconfigurations that do not provide external remote access are outside this mapping\u0027s scope. T1078 may additionally describe valid-credential abuse; T1190 may apply when a public-facing weakness is exploited. Medium confidence reflects the source\u0027s broader exposed-or-misconfigured category. Preserve Microsoft\u0027s original Initial Access tactic.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Initial Access | Exposed/misconfigured admin interfaces | MS-TA7005",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1133",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Exposed%20misconfigured%20admin%20interfaces/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1648",
+                           "tactic":  "execution",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Serverless trigger injection\nSource ID: MS-TA7006\nMapping confidence: Medium\nBasis: Researcher mapping; conditional arbitrary-execution scope\nMaps to T1648 when attacker-controlled event inputs cause arbitrary code or commands to execute in a serverless workload. The function may already exist; creating a malicious function is not required. Merely triggering legitimate processing, or causing data access without attacker-controlled code or command execution, is outside this mapping\u0027s scope. T1190 may additionally apply where exploitation of a public-facing application provides initial access. T1059.009 concerns cloud-provider API abuse, not every application API request or upload. Medium confidence reflects the source\u0027s broader range of outcomes; T1648 captures the execution behavior, not the input-injection mechanism itself. Microsoft\u0027s original Initial Access tactic is preserved in comments; Navigator places T1648 under Execution.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Initial Access | Serverless trigger injection | MS-TA7006",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1648",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Serverless%20trigger%20injection/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1078",
+                           "tactic":  "initial-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Using deployment credentials\nSource ID: MS-TA7007\nMapping confidence: High\nBasis: Researcher mapping\nAbusing legitimate deployment credentials for authenticated management access directly matches Valid Accounts. Use the parent rather than T1078.004 because publishing/SCM credentials are not necessarily cloud user or service identities. Credential acquisition and subsequent command execution are separate behaviors.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Initial Access | Using deployment credentials | MS-TA7007",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1078",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Using%20deployment%20credentials/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1078.004",
+                           "tactic":  "initial-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Initial Access\nOriginal threat matrix technique name: Valid cloud accounts\nSource ID: MS-TA7008\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Initial Access | Valid cloud accounts | MS-TA7008",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1078/004",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Valid%20cloud%20accounts/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1059",
+                           "tactic":  "execution",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Execution\nOriginal threat matrix technique name: Cloud native terminal\nSource ID: MS-TA7010\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Execution | Cloud native terminal | MS-TA7010",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1059",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Cloud%20native%20terminal/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1195.001",
+                           "tactic":  "initial-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Execution\nOriginal threat matrix technique name: Site extensions\nSource ID: MS-TA7012\nMapping confidence: High\nBasis: Researcher mapping\nA malicious or compromised third-party NuGet extension installed as a trusted dependency matches Compromise Software Dependencies and Development Tools, including package-name confusion. Prefer T1195.001 over the broader T1195.002. T1176 can cover malicious extension persistence, but persistence is not established here. ATT\u0026CK places the selected mechanism in Initial Access; Microsoft places its execution outcome in Execution.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Execution | Site extensions | MS-TA7012",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1195/001",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Site%20extensions/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1053",
+                           "tactic":  "persistence",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Persistence\nOriginal threat matrix technique name: Cron jobs\nSource ID: MS-TA7013\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Persistence | Cron jobs | MS-TA7013",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1053",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Cron%20jobs/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1078.004",
+                           "tactic":  "persistence",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Persistence\nOriginal threat matrix technique name: Valid cloud accounts\nSource ID: MS-TA7008\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Persistence | Valid cloud accounts | MS-TA7008",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1078/004",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Valid%20cloud%20accounts/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1078.004",
+                           "tactic":  "privilege-escalation",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Privilege Escalation\nOriginal threat matrix technique name: Access cloud resources\nSource ID: MS-TA7015\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.\n\nOriginal threat matrix tactic: Lateral Movement\nOriginal threat matrix technique name: Access cloud resources\nSource ID: MS-TA7015\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Privilege Escalation | Access cloud resources | MS-TA7015",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Lateral Movement | Access cloud resources | MS-TA7015",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1078/004",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Access%20cloud%20resources/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1552.005",
+                           "tactic":  "credential-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Privilege Escalation\nOriginal threat matrix technique name: Access workload identity credentials\nSource ID: MS-TA7016\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.\n\nOriginal threat matrix tactic: Credential Access\nOriginal threat matrix technique name: Access workload identity credentials\nSource ID: MS-TA7016\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Privilege Escalation | Access workload identity credentials | MS-TA7016",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Credential Access | Access workload identity credentials | MS-TA7016",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1552/005",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Access%20workload%20identity%20credentials/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1578",
+                           "tactic":  "defense-impairment",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Defense Evasion\nOriginal threat matrix technique name: Development slots\nSource ID: MS-TA7011\nMapping confidence: Medium\nBasis: Researcher mapping; conditional managed-infrastructure interpretation\nMaps to T1578 when an adversary creates or modifies a cloud application deployment slot or comparable managed compute deployment configuration to evade defenses, for example by placing malicious activity in a staging deployment outside production-focused monitoring or by changing deployment routing to bypass defensive checks. This is a researcher interpretation of the parent technique\u0027s broad infrastructure-modification definition, not an explicit MITRE deployment-slot example or a change to official ATT\u0026CK scope. Editing application code alone, invoking an unchanged staging endpoint, or promoting a deployment without an established defense-evasion purpose is outside this mapping\u0027s scope. Prefer the parent T1578 over T1578.005, which focuses on settings affecting compute size, location, and available resources; T1535 concerns geographic regions. Microsoft\u0027s original Defense Evasion tactic is retained; Navigator places T1578 under Defense Impairment. The separate Execution placement remains custom.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Defense Evasion | Development slots | MS-TA7011",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1578",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Development%20slots/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1685.002",
+                           "tactic":  "defense-impairment",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Defense Evasion\nOriginal threat matrix technique name: Disable cloud logging\nSource ID: MS-TA7017\nMapping confidence: High\nBasis: Microsoft mapping updated by MITRE revoked-by relationship\nMicrosoft references T1562.008. ATT\u0026CK 19.2 revokes it in favor of T1685.002 (Disable or Modify Cloud Log), verified by relationship--8f018f26-24ff-4ad1-9583-a5c92bda350b. The replacement belongs to Defense Impairment, while Microsoft\u0027s original tactic is Defense Evasion. The mapping covers disabling/modifying logging; other log-deletion behaviors may need additional analysis.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Defense Evasion | Disable cloud logging | MS-TA7017",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1685/002",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Disable%20cloud%20logging/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1110",
+                           "tactic":  "credential-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Credential Access\nOriginal threat matrix technique name: Brute force\nSource ID: MS-TA7018\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Credential Access | Brute force | MS-TA7018",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1110",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Brute%20force/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1552",
+                           "tactic":  "credential-access",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Credential Access\nOriginal threat matrix technique name: Cloud credentials in runtime environment\nSource ID: MS-TA7019\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Credential Access | Cloud credentials in runtime environment | MS-TA7019",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1552",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Cloud%20credentials%20in%20runtime%20environment/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1530",
+                           "tactic":  "collection",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Discovery\nOriginal threat matrix technique name: Access to connected cloud storage\nSource ID: MS-TA7020\nMapping confidence: High\nBasis: Researcher mapping\nReading source code and configuration from cloud object storage directly matches Data from Cloud Storage. T1619 concerns object enumeration rather than reading contents. The Microsoft Discovery placement is preserved in annotations; ATT\u0026CK places this behavior in Collection.\n\nOriginal threat matrix tactic: Impact\nOriginal threat matrix technique name: Data theft\nSource ID: MS-TA7028\nMapping confidence: Medium\nBasis: Researcher mapping; conditional cloud-storage collection\nMaps to T1530 where an adversary retrieves application content, user information, configuration files, or proprietary content from cloud storage used by the application or its connected resources. Microsoft explicitly includes storage and connected cloud resources, supporting this researcher-selected alignment. The source also describes broader application-data retrieval without specifying the storage type or access method, which limits confidence. Collection from local files, process memory, or information repositories is not covered by this mapping merely because the application is cloud-hosted. This mapping represents collection from cloud storage, not a specified exfiltration channel. Microsoft\u0027s original Impact tactic is retained; Navigator places the annotation under Collection.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Discovery | Access to connected cloud storage | MS-TA7020",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Impact | Data theft | MS-TA7028",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1530",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Access%20to%20connected%20cloud%20storage/",
+                                             "label":  "Microsoft technique"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Data%20theft/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1526",
+                           "tactic":  "discovery",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Discovery\nOriginal threat matrix technique name: Cloud service discovery\nSource ID: MS-TA7021\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.\n\nOriginal threat matrix tactic: Discovery\nOriginal threat matrix technique name: Instance metadata API\nSource ID: MS-TA7022\nMapping confidence: Medium\nBasis: Microsoft explicit mapping; qualified scope\nRetain Microsoft\u0027s explicit T1526 mapping for cloud-service discovery. The description also covers VM and network information, so this is not an exact mapping of every metadata query. T1552.005 applies specifically to credential retrieval and is separately represented by Access workload identity credentials.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Discovery | Cloud service discovery | MS-TA7021",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Discovery | Instance metadata API | MS-TA7022",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1526",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Cloud%20service%20discovery/",
+                                             "label":  "Microsoft technique"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Instance%20metadata%20API/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1021.007",
+                           "tactic":  "lateral-movement",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Lateral Movement\nOriginal threat matrix technique name: Connector reuse\nSource ID: MS-TA7023\nMapping confidence: Medium\nBasis: Researcher mapping; conditional connector-mediated cloud-access interpretation\nMaps to T1021.007 where an adversary abuses an existing managed connector to access a connected cloud service using the connector\u0027s stored authenticated identity. The connector may perform authentication and remote actions on the adversary\u0027s behalf without exposing its credentials. This is a researcher interpretation of connector-mediated lateral access, not an explicit MITRE connector-reuse example. The Microsoft source does not establish the synchronized or federated identity context described by ATT\u0026CK, which limits confidence. Connections to non-cloud targets and actions that do not establish access to a connected cloud service are outside this mapping\u0027s scope. Microsoft\u0027s original Lateral Movement tactic is retained. T1550.001 may apply when application-token compromise and use are established; T1671 may apply to OAuth integration persistence, which is not required or established by this mapping.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Lateral Movement | Connector reuse | MS-TA7023",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1021/007",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Connector%20reuse/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1210",
+                           "tactic":  "lateral-movement",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Lateral Movement\nOriginal threat matrix technique name: Server side request forgery (SSRF)\nSource ID: MS-TA7024\nMapping confidence: Medium\nBasis: Microsoft explicit mapping; qualified scope\nRetain Microsoft\u0027s explicit T1210 mapping for exploitation of internal remote services through SSRF. Merely redirecting an HTTP request is broader than remote-service exploitation; the mapping applies to the exploitation/lateral-movement case, not every SSRF request. T1190 instead describes initial exploitation of the public-facing application.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Lateral Movement | Server side request forgery (SSRF) | MS-TA7024",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1210",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Server%20side%20request%20forgery%20(SSRF)/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1213",
+                           "tactic":  "collection",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Collection\nOriginal threat matrix technique name: Access application database\nSource ID: MS-TA7025\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.\n\nOriginal threat matrix tactic: Collection\nOriginal threat matrix technique name: Event data capture\nSource ID: MS-TA7026\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Collection | Access application database | MS-TA7025",
+                                                "name":  "Source placement"
+                                            },
+                                            {
+                                                "value":  "Collection | Event data capture | MS-TA7026",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1213",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Access%20application%20database/",
+                                             "label":  "Microsoft technique"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Event%20data%20capture/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1485",
+                           "tactic":  "impact",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Impact\nOriginal threat matrix technique name: Data destruction\nSource ID: MS-TA7027\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Impact | Data destruction | MS-TA7027",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1485",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Data%20destruction/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1491",
+                           "tactic":  "impact",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Impact\nOriginal threat matrix technique name: Defacement\nSource ID: MS-TA7029\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Impact | Defacement | MS-TA7029",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1491",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Defacement/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1496.004",
+                           "tactic":  "impact",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Impact\nOriginal threat matrix technique name: Denial of wallet\nSource ID: MS-TA7030\nMapping confidence: Medium\nBasis: Researcher mapping; conditional cloud-service hijacking\nMaps to T1496.004 where an adversary abuses a compromised cloud service or SaaS application to perform resource-intensive operations that incur costs or consume service quotas for the victim. ATT\u0026CK explicitly recognizes these financial consequences; service unavailability and attacker financial gain are not required. This is a researcher-selected alignment with Microsoft\u0027s cloud-service abuse and cost-inflation behavior, not an unconditional equivalence. Microsoft also describes request flooding and cloud-function invocations without establishing compromise of a SaaS application, so those cases are not covered merely because they increase billing. Microsoft\u0027s original Impact tactic is retained.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Impact | Denial of wallet | MS-TA7030",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1496/004",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Denial%20of%20wallet/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       },
+                       {
+                           "techniqueID":  "T1496",
+                           "tactic":  "impact",
+                           "score":  1,
+                           "enabled":  true,
+                           "comment":  "Original threat matrix tactic: Impact\nOriginal threat matrix technique name: Resource hijacking\nSource ID: MS-TA7031\nMapping confidence: High\nBasis: Microsoft explicit mapping\nRetain the active ATT\u0026CK reference explicitly published by Microsoft. Preserve the referenced parent/subtechnique specificity rather than infer a narrower mechanism.",
+                           "metadata":  [
+                                            {
+                                                "value":  "Impact | Resource hijacking | MS-TA7031",
+                                                "name":  "Source placement"
+                                            }
+                                        ],
+                           "links":  [
+                                         {
+                                             "url":  "https://attack.mitre.org/techniques/T1496",
+                                             "label":  "Official MITRE ATT\u0026CK"
+                                         },
+                                         {
+                                             "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Resource%20hijacking/",
+                                             "label":  "Microsoft technique"
+                                         }
+                                     ]
+                       }
+                   ],
+    "gradient":  {
+                     "maxValue":  1,
+                     "minValue":  0,
+                     "colors":  [
+                                    "#ffffff",
+                                    "#2b8cbe"
+                                ]
+                 },
+    "selectTechniquesAcrossTactics":  false,
+    "selectSubtechniquesWithParent":  false,
+    "metadata":  [
+                     {
+                         "value":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/",
+                         "name":  "Source URL"
+                     },
+                     {
+                         "value":  "2026-09-11",
+                         "name":  "Extraction date"
+                     },
+                     {
+                         "value":  "Enterprise ATT\u0026CK 19.2; pinned official data: https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/enterprise-attack/enterprise-attack-19.2.json",
+                         "name":  "ATT\u0026CK release"
+                     },
+                     {
+                         "value":  "26e5feefc312b99586243343daeea616a9ed2d33",
+                         "name":  "Source revision"
+                     },
+                     {
+                         "value":  "6cda5ad8462c79e14fbb872f4e09059b18e0cfc4",
+                         "name":  "ATT\u0026CK revision"
+                     },
+                     {
+                         "value":  "High: explicit Microsoft reference verified against active MITRE data, or a direct researcher mapping. Medium: qualified scope or variant-dependent match. Unmapped: custom; no unconditional equivalent. These are analytical judgments, not MITRE endorsements.",
+                         "name":  "Mapping confidence"
+                     },
+                     {
+                         "value":  "Development slots",
+                         "name":  "Custom techniques identified"
+                     },
+                     {
+                         "value":  "All 11 Microsoft tactics and 35 placements are preserved in this metadata and mapped comments. Navigator uses official Enterprise 19.2 tactic membership. Custom entries are metadata, not drawable technique cells. Defense Evasion is not a v19 tactic; the logging replacement is under Defense Impairment. No custom ATT\u0026CK IDs are fabricated.",
+                         "name":  "Structure preservation"
+                     },
+                     {
+                         "value":  "Subdomain takeover [mapped: T1584.001]",
+                         "name":  "Original tactic: Resource Development"
+                     },
+                     {
+                         "value":  "Application vulnerability [mapped: T1190]; Code injection in connected repository [mapped: T1195.002]; Compromised image in registry [mapped: T1195.002]; Exposed/misconfigured admin interfaces [mapped: T1133]; Serverless trigger injection [mapped: T1648]; Using deployment credentials [mapped: T1078]; Valid cloud accounts [mapped: T1078.004]",
+                         "name":  "Original tactic: Initial Access"
+                     },
+                     {
+                         "value":  "Application exploit (RCE) [mapped: T1190]; Cloud native terminal [mapped: T1059]; Development slots [custom: ]; Site extensions [mapped: T1195.001]",
+                         "name":  "Original tactic: Execution"
+                     },
+                     {
+                         "value":  "Cron jobs [mapped: T1053]; Source code modification [mapped: T1195.002]; Valid cloud accounts [mapped: T1078.004]",
+                         "name":  "Original tactic: Persistence"
+                     },
+                     {
+                         "value":  "Access cloud resources [mapped: T1078.004]; Access workload identity credentials [mapped: T1552.005]",
+                         "name":  "Original tactic: Privilege Escalation"
+                     },
+                     {
+                         "value":  "Development slots [mapped: T1578]; Disable cloud logging [mapped: T1685.002]",
+                         "name":  "Original tactic: Defense Evasion"
+                     },
+                     {
+                         "value":  "Access workload identity credentials [mapped: T1552.005]; Brute force [mapped: T1110]; Cloud credentials in runtime environment [mapped: T1552]",
+                         "name":  "Original tactic: Credential Access"
+                     },
+                     {
+                         "value":  "Access to connected cloud storage [mapped: T1530]; Cloud service discovery [mapped: T1526]; Instance metadata API [mapped: T1526]",
+                         "name":  "Original tactic: Discovery"
+                     },
+                     {
+                         "value":  "Access cloud resources [mapped: T1078.004]; Connector reuse [mapped: T1021.007]; Server side request forgery (SSRF) [mapped: T1210]",
+                         "name":  "Original tactic: Lateral Movement"
+                     },
+                     {
+                         "value":  "Access application database [mapped: T1213]; Event data capture [mapped: T1213]",
+                         "name":  "Original tactic: Collection"
+                     },
+                     {
+                         "value":  "Data destruction [mapped: T1485]; Data theft [mapped: T1530]; Defacement [mapped: T1491]; Denial of wallet [mapped: T1496.004]; Resource hijacking [mapped: T1496]",
+                         "name":  "Original tactic: Impact"
+                     },
+                     {
+                         "value":  "MS-TA7011: The Execution placement remains custom. Running code in a development slot has no single direct mapping across all described platforms. T1648 may cover arbitrary execution in a serverless variant, but is not selected for this placement. T1578 describes infrastructure modification to evade defenses, not generic execution, and is selected only for the separate Defense Evasion placement. T1535 concerns geographic regions, not slots. Source: https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/techniques/Development%20slots/",
+                         "name":  "custom: Execution | Development slots"
+                     },
+                     {
+                         "name":  "Original contribution license",
+                         "value":  "License: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Contributor: jaekk0, https://github.com/jaekk0. Third-party material retains its applicable terms; no relicensing or endorsement is claimed."
+                     },
+                     {
+                         "name":  "Attribution",
+                         "value":  "Microsoft Corporation: Cloud Web Applications Threat Matrix, CC BY 4.0. Source: https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/ License: https://creativecommons.org/licenses/by/4.0/. Material is provided subject to the disclaimer of warranties and limitation of liability in Section 5. Original mapping contributor: jaekk0, https://github.com/jaekk0."
+                     },
+                     {
+                         "name":  "Modifications",
+                         "value":  "Extracted 35 source placements; selected and qualified mappings against Enterprise ATT\u0026CK 19.2; added eleven researcher-selected mappings, including conditional T1190 coverage for Application exploit (RCE), T1133 coverage for Exposed/misconfigured admin interfaces, T1648 coverage for Serverless trigger injection, T1578 coverage for Development slots under Defense Evasion, T1021.007 coverage for Connector reuse, T1530 coverage for Data theft, and T1496.004 coverage for Denial of wallet, each at Medium confidence with explicit scope limitations. Development slots under Execution remains custom; its T1578 mapping is a managed-infrastructure interpretation, not an explicit MITRE slot example or extension of official scope. Connector reuse is interpreted as connector-mediated lateral access to a cloud service, excluding non-cloud targets; the source does not establish the synchronized or federated identity context described by ATT\u0026CK. Data theft covers only retrieval from cloud storage, not all cloud-hosted application data or a specified exfiltration channel; its original Impact placement is retained while Navigator uses Collection. Denial of wallet covers resource-intensive abuse of a compromised cloud service or SaaS application that incurs costs or consumes quotas. Availability loss and attacker financial gain are not required; request flooding and cloud-function invocations without established SaaS compromise do not qualify merely because billing increases. Added confidence and custom-entry explanations; migrated a revoked logging ID; used official Navigator tactic membership. Publication preparation adds notices and removes private build references."
+                     },
+                     {
+                         "name":  "MITRE ATT\u0026CK license and disclaimers",
+                         "value":  "License\n-------\nThe MITRE Corporation (MITRE) hereby grants you a non-exclusive, royalty-free license to use ATT\u0026CK® for research,\ndevelopment, and commercial purposes. Any copy you make for such purposes is authorized provided that you reproduce\nMITRE\u0027s copyright designation and this license in any such copy.\n\n\"© 2026 The MITRE Corporation. This work is reproduced and distributed with the permission of The MITRE Corporation.\"\n\nDisclaimers\n-----------\nMITRE does not claim ATT\u0026CK enumerates all possibilities for the types of actions and behaviors documented as part\nof its adversary model and framework of techniques. Using the information contained within ATT\u0026CK to address or cover\nfull categories of techniques will not guarantee full defensive coverage as there may be undisclosed techniques or\nvariations on existing techniques not documented by ATT\u0026CK.\n\nALL DOCUMENTS AND THE INFORMATION CONTAINED THEREIN ARE PROVIDED ON AN \"AS IS\" BASIS AND THE CONTRIBUTOR, THE\nORGANIZATION HE/SHE REPRESENTS OR IS SPONSORED BY (IF ANY), THE MITRE CORPORATION, ITS BOARD OF TRUSTEES, OFFICERS,\nAGENTS, AND EMPLOYEES, DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT\nTHE USE OF THE INFORMATION THEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR\nFITNESS FOR A PARTICULAR PURPOSE.\n"
+                     },
+                     {
+                         "name":  "Independence",
+                         "value":  "Independent mapping, not affiliated with or endorsed by Microsoft or MITRE. MITRE ATT\u0026CK and ATT\u0026CK are registered trademarks of The MITRE Corporation."
+                     }
+                 ],
+    "links":  [
+                  {
+                      "url":  "https://microsoft.github.io/Threat-Matrix-for-Cloud-Web-Applications/",
+                      "label":  "Microsoft threat matrix"
+                  },
+                  {
+                      "url":  "https://www.microsoft.com/en-us/security/blog/2026/09/09/threat-matrix-mapping-threats-across-cloud-web-applications/",
+                      "label":  "Microsoft Security Blog"
+                  },
+                  {
+                      "url":  "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/6cda5ad8462c79e14fbb872f4e09059b18e0cfc4/enterprise-attack/enterprise-attack-19.2.json",
+                      "label":  "Pinned Enterprise ATT\u0026CK 19.2"
+                  },
+                  {
+                      "url":  "https://mitre-attack.github.io/attack-navigator/",
+                      "label":  "ATT\u0026CK Navigator"
+                  }
+              ]
+}
